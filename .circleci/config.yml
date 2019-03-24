@@ -6,6 +6,10 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install dependencies
+          command: npm install
+      - run:
           name: Build project
-          command: npm install babel
-            - npm run build
+          command: npm run build
+
+      

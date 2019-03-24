@@ -5,6 +5,6 @@ jobs:
       - image: circleci/node:8.9.4
     steps:
       - checkout
-    run:
-      name: Build project
-      command: npm run build
+      - run:
+          name: Build project
+          command: npm run build

@@ -22,7 +22,7 @@ workflow:
           command: npm run test:unit
 workflows:
   version: 2
-  workflow:
+  build-test:
     jobs:
       - build
       - unit-test

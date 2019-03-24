@@ -6,6 +6,12 @@ jobs:
       - image: circleci/node:8.9.4
     steps:
       - checkout
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-node-modules-cache-{{ checksum "package.json" }}
+
       - run:
           name: Install dependencies
           command: npm install
@@ -17,9 +23,8 @@ jobs:
       - image: circleci/node:8.9.4
     steps:
       - checkout
-      - run:
-          name: Install dependencies
-          command: npm install
+      - restore_cache:
+        key: v1-node-modules-cache-{{ checksum "package.json" }}
       - run: 
           name: Run unit tests
           command: npm run test:unit

@@ -7,5 +7,5 @@ jobs:
       - checkout
       - run:
           name: Build project
-          command: npm install
+          command: npm run install
             - npm run build

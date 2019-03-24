@@ -17,6 +17,9 @@ workflow:
       - image: circleci/node:8.9.4
     steps:
       - checkout
+      - run:
+          name: Install dependencies
+          command: npm install
       - run: 
           name: Run unit tests
           command: npm run test:unit

@@ -1,6 +1,7 @@
 # CircleCI Demo
 
 Basic Node.js API for demonstration purposes. Used for CircleCI Workshop.
+Hello!
 
 ## Setup
 

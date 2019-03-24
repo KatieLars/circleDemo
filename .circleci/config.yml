@@ -11,6 +11,11 @@ jobs:
       - run:
           name: Build project
           command: npm run build
+  unit-test:
+    docker:
+      - image: circleci/node:8.9.4
+    steps:
+      - checkout
       - run: 
           name: Run unit tests
           command: npm run test:unit

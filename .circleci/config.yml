@@ -24,6 +24,8 @@ jobs:
     steps:
       - checkout
       - restore_cache:
+          paths:
+            - node_modules
           key: v1-node-modules-cache-{{ checksum "package.json" }}
       - run: 
           name: Run unit tests

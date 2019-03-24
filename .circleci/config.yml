@@ -1,26 +1,26 @@
 version: 2
 workflow:
   jobs:
-  build: 
-    docker: 
-      - image: circleci/node:8.9.4
-    steps:
-      - checkout
-      - run:
+    build: 
+      docker: 
+        - image: circleci/node:8.9.4
+      steps:
+        - checkout
+        - run:
           name: Install dependencies
           command: npm install
-      - run:
+        - run:
           name: Build project
           command: npm run build
-  unit-test:
-    docker:
-      - image: circleci/node:8.9.4
-    steps:
-      - checkout
-      - run:
+    unit-test:
+      docker:
+        - image: circleci/node:8.9.4
+      steps:
+        - checkout
+        - run:
           name: Install dependencies
           command: npm install
-      - run: 
+        - run: 
           name: Run unit tests
           command: npm run test:unit
 workflows:
